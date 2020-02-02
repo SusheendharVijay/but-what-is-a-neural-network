@@ -85,20 +85,29 @@ class Network(object):
 
 
 	
+if __name__ == '__main__':
+
+	def sigmoid_prime(z):
+		return sigmoid(z)*(1-sigmoid(z))
 
 
-def sigmoid_prime(z):
-	return sigmoid(z)*(1-sigmoid(z))
-
-
-def sigmoid(z):
-	return 1.0/(1.0+ np.exp(-z))
+	def sigmoid(z):
+		return 1.0/(1.0+ np.exp(-z))
 
 
 
 
-training_data,validation_data,testing_data = mnist_loader.load_data_wrapper()
-net = Network([784,5,10])
+	training_data,validation_data,testing_data = mnist_loader.load_data_wrapper()
+	#net = Network([784,5,10])
 
-net.SGD(training_data,90,30,3,test_data=testing_data)
+	#net.SGD(training_data,90,30,3,test_data=testing_data)
 
+	#print(training_data)
+
+	#print(training_data[0][1])
+
+
+	training_data = np.array(training_data)
+	
+	print(training_data[1])
+	#print(training_data[1:2][0].shape)
